@@ -25,13 +25,13 @@ jQuery("#downloadAll").click(function(e){
     e.preventDefault();
     jQuery.ajax({
       method: "POST",
-      url: "http://localhost/test/wp-content/plugins/zipItUp/zipper.php",
+      url: zipItUp.pluginsUrl + "/zipper.php",
       data: { 
         filestoZip: downloadArray,
       }
     })
-    .done(function( msg ) {
-      alert( "Data Saved: " + msg );
+    .done(function() {
+      alert( "Congratulations! Click OK to download ZIP." );
       window.location = e.currentTarget.getAttribute('href');
     });
   });

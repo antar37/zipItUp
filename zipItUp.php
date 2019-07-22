@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 function zipItUp_enqueue_scripts() {
   wp_register_script( 'zipItUp', plugin_dir_url( __FILE__ ) . 'zipItUp.js', array('jquery'), '1.0', true );
   wp_enqueue_script( 'zipItUp' );
+  wp_localize_script('zipItUp', 'zipItUp', array('pluginsUrl' => plugin_dir_url( __FILE__ ),));
 
   wp_register_style( 'zipItUp', plugin_dir_url( __FILE__ ) . 'zipItUp.css', '1.0' );
   wp_enqueue_style( 'zipItUp' );
