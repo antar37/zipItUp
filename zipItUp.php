@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /**
 * Plugin Name: ZipItUp
 * Plugin URI: https://github.com/antar37/zipItUp
-* Description: Select Multiple Downloads, and Zip it!
+* Description: Select Multiple files to download, and Zip it!
 * Version: 1.0
 * Author: Alex Tarasiuk
 * Author URI: https://alextarasiuk.com
@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 function zipItUp_enqueue_scripts() {
   wp_register_script( 'zipItUp', plugin_dir_url( __FILE__ ) . 'zipItUp.js', array('jquery'), '1.0', true );
   wp_enqueue_script( 'zipItUp' );
+  // Localizing the script lets me access the plugin directory in my JS file
   wp_localize_script('zipItUp', 'zipItUp', array('pluginsUrl' => plugin_dir_url( __FILE__ ),));
 
   wp_register_style( 'zipItUp', plugin_dir_url( __FILE__ ) . 'zipItUp.css', '1.0' );
@@ -22,10 +23,10 @@ function zipItUp_enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'zipItUp_enqueue_scripts');
 
-// [downloadAll]
-function downloadAll_func() {
-	return '<a id="downloadAll" href="' . plugin_dir_url( __FILE__ ) . 'bundled_files.zip" >Download All</a>';
+// [downloadSelected] - Shortcode registration
+function downloadSelected_func() {
+	return '<a id="downloadSelected" href="' . plugin_dir_url( __FILE__ ) . 'bundled_files.zip" >Download Selected</a>';
 }
-add_shortcode( 'downloadAll', 'downloadAll_func' );
+add_shortcode( 'downloadSelected', 'downloadSelected_func' );
 
 ?>

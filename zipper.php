@@ -14,7 +14,9 @@
           $error .=  "* Sorry ZIP creation failed at this time<br/>";
         }
 
-        // Add files to the zip file
+        // Add files to the zip file. In order to get relative links, we go two levels down from our 
+        // zipper.php file to go to the uploads folder and work our way up to the file.
+        // TODO - find a more elegant way to do this. 
         foreach($filesArray as $absPath) {
           $baseString = "uploads";
           $stringPos = strpos($absPath, $baseString);

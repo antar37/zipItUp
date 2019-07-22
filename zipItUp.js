@@ -15,13 +15,13 @@ jQuery(".download-link").click(function(e){
   console.log(downloadArray);
   // If there is not an array item at 0, hide the download link. If it's not empty, show it.
   if(downloadArray[0]){
-    jQuery("#downloadAll").show();
+    jQuery("#downloadSelected").show();
   } else {
-    jQuery("#downloadAll").hide();
+    jQuery("#downloadSelected").hide();
   }
 });
 
-jQuery("#downloadAll").click(function(e){
+jQuery("#downloadSelected").click(function(e){
     e.preventDefault();
     jQuery.ajax({
       method: "POST",
