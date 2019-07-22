@@ -1,0 +1,20 @@
+.ZIP-selected-link{
+   display:block;
+   position:relative;
+}
+
+.ZIP-selected-link:before{
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255,255,255,.5);
+   display: block;
+   content: "✅";
+   position: absolute;
+   top:0;
+   right:0;
+   z-index: 1;
+}
+
+#downloadAll{
+   display:none;
+}
