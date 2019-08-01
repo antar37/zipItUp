@@ -16,7 +16,7 @@ Activate the plugin, and insert the \"Download All\" shortcode to get it up and 
 == Installation ==
 Activate the plugin.
 
-On the page with the downloads, insert the [downloadAll] shortcode.
+On the page with the downloads, insert the [zipItUpMenu] shortcode.
 Any anchor tag that points to one of the downloads in the link MUST be given a CSS class of \"download-link\"
 The plugin will monitor the \"download-link\" CSS class, and make them clickable without automatically navigating to the link, allowing the user to create the list of items to download in a ZIP.
 
