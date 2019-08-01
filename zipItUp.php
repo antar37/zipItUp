@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 * Plugin Name: ZipItUp
 * Plugin URI: https://github.com/antar37/zipItUp
 * Description: Select Multiple files to download, and Zip it!
-* Version: 1.0
+* Version: 1.1
 * Author: Alex Tarasiuk
 * Author URI: https://alextarasiuk.com
 * License:     GPL v2 or later
@@ -23,10 +23,9 @@ function zipItUp_enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'zipItUp_enqueue_scripts');
 
-// [downloadSelected] - Shortcode registration
-function downloadSelected_func() {
-	return '<a id="downloadSelected" href="' . plugin_dir_url( __FILE__ ) . 'bundled_files.zip" >Download Selected</a>';
+// [zipItUpMenu] - Shortcode registration
+function zipItUpMenu_func() {
+	return '<div id="zipItUpMenu"><a id="downloadSelected" href="' . plugin_dir_url( __FILE__ ) . 'bundled_files.zip" >Download&nbsp;Selected</a><a id="selectAll" href="">Select All</a><a id="cancelSelected" href="">Clear</a></div>';
 }
-add_shortcode( 'downloadSelected', 'downloadSelected_func' );
-
+add_shortcode( 'zipItUpMenu', 'zipItUpMenu_func' );
 ?>
