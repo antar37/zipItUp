@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
     checkArraySize();
   });
 
-  jQuery("#downloadSelected").click(function(e){
+  jQuery(".downloadSelected").click(function(e){
     e.preventDefault();
     jQuery.ajax({
       method: "POST",
@@ -33,14 +33,14 @@ jQuery(document).ready(function(){
     });
   });
 
-  jQuery("#cancelSelected").click(function(e){
+  jQuery(".cancelSelected").click(function(e){
     e.preventDefault();
     jQuery(".download-link").removeClass("ZIP-selected-link");
     downloadArray = [];
     checkArraySize();
   });
 
-  jQuery("#selectAll").click(function(e){
+  jQuery(".selectAll").click(function(e){
     e.preventDefault();
     jQuery(".download-link").addClass("ZIP-selected-link");
   });
@@ -48,9 +48,9 @@ jQuery(document).ready(function(){
 
 function checkArraySize(){
   if(downloadArray[0]){
-    jQuery("#zipItUpMenu").css('display', 'inline-block');
+    jQuery(".zipItUpMenu").css('display', 'inline-block');
   } else {
-    jQuery("#zipItUpMenu").css('display', 'none');
+    jQuery(".zipItUpMenu").css('display', 'none');
   }
 }
 

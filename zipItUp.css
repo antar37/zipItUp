@@ -14,7 +14,7 @@
    z-index: 1;
 }
 
-#zipItUpMenu{
+.zipItUpMenu{
    display:none;
    font-size:12px;
    font-family: sans-serif;
@@ -24,7 +24,7 @@
    border: 2px solid #ccc;
 }
 
-#zipItUpMenu a{
+.zipItUpMenu a{
    text-decoration: none;
    padding: 0 10px;
    border-radius: 5px;
@@ -33,32 +33,32 @@
    color:white;
 }
 
-#downloadSelected{
+.downloadSelected{
    background: forestgreen;
    border: 2px solid #207120;
 }
 
-#downloadSelected:hover{
+.downloadSelected:hover{
    background: #207120;
    border: 2px solid forestgreen;
 }
 
-#selectAll{
+.selectAll{
    background: #007bff;
    border: 2px solid #007bff;
 }
 
-#selectAll:hover{
+.selectAll:hover{
    background: #007bff;
    border: 2px solid #007bff;
 }
 
-#cancelSelected{
+.cancelSelected{
    background: #b72e3b;
    border: 2px solid #dc3545;
 }
 
-#cancelSelected:hover{
+.cancelSelected:hover{
    background: #dc3545;
    border: 2px solid #b72e3b;
 }

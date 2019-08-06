@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', 'zipItUp_enqueue_scripts');
 
 // [zipItUpMenu] - Shortcode registration
 function zipItUpMenu_func() {
-	return '<div id="zipItUpMenu"><a id="downloadSelected" href="' . plugin_dir_url( __FILE__ ) . 'bundled_files.zip" >Download&nbsp;Selected</a><a id="selectAll" href="">Select All</a><a id="cancelSelected" href="">Clear</a></div>';
+	return '<div class="zipItUpMenu"><a class="downloadSelected" href="' . plugin_dir_url( __FILE__ ) . 'bundled_files.zip" >Download&nbsp;Selected</a><a class="selectAll" href="">Select All</a><a class="cancelSelected" href="">Clear</a></div>';
 }
 add_shortcode( 'zipItUpMenu', 'zipItUpMenu_func' );
 ?>
