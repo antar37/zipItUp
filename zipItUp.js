@@ -12,8 +12,7 @@ jQuery(document).ready(function(){
     } else {
       downloadArray.push(currentLink);
     }
-    // If there is not an array item at 0, hide the download link. If it's not empty, show it.
-    checkArraySize();
+
   });
 
   jQuery(".downloadSelected").click(function(e){
@@ -37,22 +36,28 @@ jQuery(document).ready(function(){
     e.preventDefault();
     jQuery(".download-link").removeClass("ZIP-selected-link");
     downloadArray = [];
-    checkArraySize();
+
   });
 
   jQuery(".selectAll").click(function(e){
     e.preventDefault();
-    jQuery(".download-link").addClass("ZIP-selected-link");
+    //Clear the array
+    downloadArray = [];
+    //Get all links
+    let allLinks = document.querySelectorAll('.download-link');
+
+    allLinks.forEach(function(link){
+      //Only get the visible ones, because why would you select an invisible link?
+      if($(link).css('visibility') == 'visible'){
+        jQuery(".download-link").addClass("ZIP-selected-link");
+        downloadArray.push(link.getAttribute('href'));
+      }
+    });
+   
+    //Get the list of links
+    //Put the links in the array
   });
 });
-
-function checkArraySize(){
-  if(downloadArray[0]){
-    jQuery(".zipItUpMenu").css('display', 'inline-block');
-  } else {
-    jQuery(".zipItUpMenu").css('display', 'none');
-  }
-}
 
 
 
